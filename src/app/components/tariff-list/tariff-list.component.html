@@ -1,41 +1,38 @@
-<div>
-  <div>Order by</div>
+<h3>Order by</h3>
+<div *ngFor="let sortableField of sortableFields">
   <div class="order-button-group">
-    <button class="button" type="button" (click)="sortTariffs('downloadSpeed', 'ASC')">Download speed &uarr;</button>
-    <button class="button" type="button" (click)="sortTariffs('downloadSpeed', 'DESC')">Download speed &darr;</button>
+    <button class="button button-light button-sorting" type="button" (click)="sortTariffs(sortableField.fieldName, 'ASC')">{{sortableField.displayName}} &uarr;</button>
+    <button class="button button-light button-sorting" type="button" (click)="sortTariffs(sortableField.fieldName, 'DESC')">{{sortableField.displayName}} &darr;</button>
   </div>
-  <div class="order-button-group">
-    <button class="button" type="button" (click)="sortTariffs('uploadSpeed', 'ASC')">Upload speed &uarr;</button>
-    <button class="button" type="button" (click)="sortTariffs('uploadSpeed', 'DESC')">Upload speed &darr;</button>
-  </div>
-  <div class="order-button-group">
-    <button class="button" type="button" (click)="sortTariffs('price', 'ASC')">Price &uarr;</button>
-    <button class="button" type="button" (click)="sortTariffs('price', 'DESC')">Price &darr;</button>
-  </div>    
 </div>
+
+<h3>Tariffs</h3>
 <div class="tariffs-list">
-  <div *ngFor="let tariff of tariffs$ | async" class="tariff-item">
-    <div class="column-tariff-id">
+  <div *ngFor="let tariff of tariffs$ | async">
+    <app-tariff-item [tariff]="tariff"></app-tariff-item>
+    <!-- <div class="column-tariff-id">
         {{tariff.id}}
     </div>
-    <div class="column-tariff-name">
+    <div class="column-tariff-name bold-text">
         {{tariff.name}}
     </div>
     <div class="column-speeds">
         <span class="download-label">Download</span>
-        <div class="download-block">
-            <button class="button button-green" type="button">&darr;</button>
+        <div class="speed-block download-block">
+            <span class="speed-icon">&darr;</span>
             <span class="speed-label">{{tariff.downloadSpeed}} Mbit/s</span>
         </div>
         <span class="upload-label">Upload</span>
-        <div>
-            <button class="button button-green" type="button">&uarr;</button>
+        <div class="speed-block">
+            <span class="speed-icon">&uarr;</span>
             <span class="speed-label">{{tariff.uploadSpeed}} Mbit/s</span>
         </div>
     </div>
     <div class="column-benefits">
         <div *ngFor="let benefit of tariff.benefits">
-          <p>{{benefit}}</p>
+          <p>
+            <span class="check-sign">&#x2714;</span>
+            {{benefit}}</p>
         </div>
     </div>
     <div class="column-price">
@@ -43,10 +40,10 @@
           {{tariff.price | currency: 'EUR'}}
         </div>
         <div>
-            <button class="button button-green" type="button">
+            <button class="button button-bright" type="button" title="To tariff">
               <span class="to-tariff">To tariff</span> >
             </button>
         </div>
-    </div>
+    </div> -->
   </div>
 </div>

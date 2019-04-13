@@ -1,0 +1,128 @@
+@import '../../../styles.scss';
+
+$tablet-max-width: 1024px;
+$mobile-max-width: 480px;
+$speed-labels-max-width: 600px;
+
+.tariff-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .2);   
+    
+    .column {
+        &-tariff-id {
+            //display: flex;
+            //align-items: center;
+            width: calc(5% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                //align-items: flex-start;
+                width: calc(10% - 20px);
+            }
+        }
+
+        &-tariff-id,
+        &-tariff-name {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: $tablet-max-width) {
+                align-items: flex-start;
+            }
+        }
+
+        &-tariff-name,
+        &-speeds {
+            width: calc(25% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                width: calc(30% - 20px);
+            }    
+        }
+
+        &-price {
+            flex-direction: column;
+            justify-content: space-between;
+            display: flex;
+            align-items: flex-end;
+            width: calc(15% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                width: calc(30% - 20px);
+            }
+            
+            .price {
+                font-size: 2em;
+                margin-bottom: 10px;
+            
+                @media screen and (max-width: $mobile-max-width) {
+                    font-size: 1.5em;
+                }
+            }            
+        }
+
+        &-benefits {
+            width: calc(30% - 20px);
+            padding: 10px;
+
+            @media screen and (max-width: $tablet-max-width) {
+                display: none;
+            }
+
+            .check-sign {
+                padding-right: 5px;
+                color: #43C386;
+            }
+        }
+    }
+
+    .to-tariff {
+        @media screen and (max-width: $mobile-max-width) {
+            display: none;
+        }
+    }
+
+    .speed-block {
+        margin-top: 5px;
+
+        &.download-block {
+            margin-bottom: 10px;
+        }
+ 
+        .speed-icon {
+            background: linear-gradient(to bottom right, #fce4ed, #ffe8cc);
+            padding: 5px 10px;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+        }
+
+        .speed-label {
+            padding: 5px 30px 5px 20px;
+            background-color: $color-light-gray;
+            border-top-right-radius: 30px 15px;
+            border-bottom-right-radius: 30px 15px;
+
+            @media screen and (max-width: $speed-labels-max-width) {
+                padding: 0;
+                background-color: white;
+            }        
+        }
+    }
+
+    .download-label,
+    .upload-label {
+        color: $color-gray;
+        margin-bottom: 5px;
+
+        @media screen and (max-width: $mobile-max-width) {
+            display: none;
+        } 
+    }
+}

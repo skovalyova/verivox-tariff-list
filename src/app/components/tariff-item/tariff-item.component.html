@@ -1,3 +1,37 @@
-<p>
-  tariff-item works!
-</p>
+<div class="tariff-item">
+  <div class="column-tariff-id">
+      {{tariff.id}}.
+  </div>
+  <div class="column-tariff-name bold-text">
+      {{tariff.name}}
+  </div>
+  <div class="column-speeds">
+      <span class="download-label">Download</span>
+      <div class="speed-block download-block">
+          <span class="speed-icon">&darr;</span>
+          <span class="speed-label">{{tariff.downloadSpeed}} Mbit/s</span>
+      </div>
+      <span class="upload-label">Upload</span>
+      <div class="speed-block">
+          <span class="speed-icon">&uarr;</span>
+          <span class="speed-label">{{tariff.uploadSpeed}} Mbit/s</span>
+      </div>
+  </div>
+  <div class="column-benefits">
+      <div *ngFor="let benefit of tariff.benefits">
+        <p>
+          <span class="check-sign">&#x2714;</span>
+          {{benefit}}</p>
+      </div>
+  </div>
+  <div class="column-price">
+      <div class="bold-text price">
+        {{tariff.price | currency: 'EUR'}}
+      </div>
+      <div>
+          <button class="button button-bright" type="button" title="To tariff">
+            <span class="to-tariff">To tariff</span> >
+          </button>
+      </div>
+  </div>
+</div>
