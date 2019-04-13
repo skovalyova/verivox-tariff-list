@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "name": "Tariff 1",
+        "price": 123.45,
+        "currency": "€",
+        "uploadSpeed": 12,
+        "downloadSpeed": 13,
+        "benefits": [
+            "Benefit 1",
+            "Benefit 2",
+            "Benefit 3"
+        ]
+    }
+]

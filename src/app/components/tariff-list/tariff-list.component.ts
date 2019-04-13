@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { TariffApiService } from '../../services/tariff-api.service';
 
 @Component({
   selector: 'app-tariff-list',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tariff-list.component.scss']
 })
 export class TariffListComponent implements OnInit {
+  private subscription: Subscription = new Subscription();
 
-  constructor() { }
+  constructor(private tariffApiService: TariffApiService) { }
 
   ngOnInit() {
+    this.tariffApiService.getAll().subscribe(data => {
+      console.log(data);
+     });
   }
-
 }
