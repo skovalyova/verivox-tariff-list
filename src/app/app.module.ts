@@ -2,10 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { TariffListComponent } from './components/tariff-list/tariff-list.component';
+import { TariffItemComponent } from './components/tariff-item/tariff-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TariffListComponent,
+    TariffItemComponent
   ],
   imports: [
     BrowserModule
