@@ -34,7 +34,8 @@ body {
 
     .button-light {
         background: linear-gradient(to bottom right, #fce4ed, #ffe8cc);
-
+        color: $color-gray;
+        
         &:hover {
             background: linear-gradient(to top left, #fce4ed, #ffe8cc);
         }
