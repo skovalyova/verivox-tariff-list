@@ -1,1 +1,44 @@
-/* You can add global styles to this file, and also import other style files */
+$color-green: #43C386;
+$color-dark-gray: #2e364f;
+$color-light-gray: #efefef;
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: $color-dark-gray;
+
+    .button {
+        background: $color-light-gray;
+        padding: 5px 10px;
+        margin: 0;
+        min-width: 50px;
+        outline: none;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        cursor: pointer;
+        transition: all 0.3s;
+        box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .2);
+
+        &:hover {
+            background: lighten($color-light-gray, 2%);
+        }
+    }
+
+    .button-green {
+        background: $color-green;
+        color: #ffffff;
+
+        &:hover {
+            background: lighten($color-green, 10%);
+        }
+    }
+
+    .bold-text {
+        font-weight: bold;
+    }
+
+    .break-word {
+        word-break: break-word;
+    }
+}

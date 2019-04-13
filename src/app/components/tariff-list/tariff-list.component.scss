@@ -1,0 +1,108 @@
+@import '../../../styles.scss';
+
+$tablet-max-width: 1024px;
+$mobile-max-width: 480px;
+$speed-labels-max-width: 600px;
+
+.order-button-group {
+    margin-bottom: 10px;
+}
+
+.tariffs-list {
+    word-break: break-word;
+
+    .tariff-item {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: stretch;
+
+        background: white;
+        margin: 20px;
+        border-radius: 2px;
+        box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .2);   
+        
+        .column {
+            &-tariff-id {
+                display: flex;
+                align-items: center;
+                width: calc(5% - 20px);
+                padding: 10px;
+
+                @media screen and (max-width: $tablet-max-width) {
+                    align-items: flex-start;
+                    width: calc(10% - 20px);
+                }
+            }
+
+            &-tariff-name,
+            &-speeds {
+                width: calc(25% - 20px);
+                padding: 10px;
+    
+                @media screen and (max-width: $tablet-max-width) {
+                    width: calc(30% - 20px);
+                }    
+            }
+
+            &-price {
+                flex-direction: column;
+                justify-content: space-between;
+                display: flex;
+                align-items: flex-end;
+                width: calc(15% - 20px);
+                padding: 10px;
+    
+                @media screen and (max-width: $tablet-max-width) {
+                    width: calc(30% - 20px);
+                }    
+            }
+
+            &-benefits {
+                width: calc(30% - 20px);
+                padding: 10px;
+
+                @media screen and (max-width: $tablet-max-width) {
+                    display: none;
+                }
+            }
+        }
+
+        .to-tariff {
+            @media screen and (max-width: $mobile-max-width) {
+                display: none;
+            }
+        }
+
+        .speed-label {
+            padding: 5px 30px 5px 20px;
+            background-color: $color-light-gray;
+            border-top-right-radius: 30px 15px;
+            border-bottom-right-radius: 30px 15px;
+
+            @media screen and (max-width: $speed-labels-max-width) {
+                padding: 0;
+                background-color: #ffffff;
+            }        
+        }
+
+        .download-block {
+            margin-bottom: 10px;
+        }
+
+        .download-label,
+        .upload-label {
+            @media screen and (max-width: $mobile-max-width) {
+                display: none;
+            } 
+        }
+    }
+}
+
+.price {
+    font-size: 2em;
+    margin-bottom: 10px;
+
+    @media screen and (max-width: $mobile-max-width) {
+        font-size: 1.5em;
+    }
+}

@@ -1,6 +1,7 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { TariffApiService } from '../../services/tariff-api.service';
+import { TariffModel } from 'src/app/models/tariff.model';
 
 @Component({
   selector: 'app-tariff-list',
@@ -8,13 +9,15 @@ import { TariffApiService } from '../../services/tariff-api.service';
   styleUrls: ['./tariff-list.component.scss']
 })
 export class TariffListComponent implements OnInit {
-  private subscription: Subscription = new Subscription();
+  public tariffs$: Observable<Array<TariffModel>>;
 
   constructor(private tariffApiService: TariffApiService) { }
 
   ngOnInit() {
-    this.tariffApiService.getAll().subscribe(data => {
-      console.log(data);
-     });
+    this.tariffs$ = this.tariffApiService.getAll();
+  }
+
+  public sortTariffs(fieldName: keyof TariffModel, direction: "ASC" | "DESC") {
+    this.tariffs$ = this.tariffApiService.getAll(fieldName, direction);
   }
 }
