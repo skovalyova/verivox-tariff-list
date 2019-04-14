@@ -5,13 +5,13 @@ $mobile-max-width: 480px;
 $speed-labels-max-width: 600px;
 
 .tariff-item {
-    display: flex;
+    @include flexbox();
     flex-wrap: wrap;
     align-content: stretch;
     background: white;
     margin-bottom: 40px;
     border-radius: 2px;
-    box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .2);   
+    box-shadow: 1px 1px 10px 0 rgba(132, 158, 178, .3);   
     
     .column {
         &-tariff-id {
@@ -25,7 +25,7 @@ $speed-labels-max-width: 600px;
 
         &-tariff-id,
         &-tariff-name {
-            display: flex;
+            @include flexbox();
             align-items: center;
 
             @media screen and (max-width: $tablet-max-width) {
@@ -44,9 +44,9 @@ $speed-labels-max-width: 600px;
         }
 
         &-price {
+            @include flexbox();
             flex-direction: column;
             justify-content: space-between;
-            display: flex;
             align-items: flex-end;
             width: calc(15% - 20px);
             padding: 10px;
@@ -75,7 +75,7 @@ $speed-labels-max-width: 600px;
 
             .check-sign {
                 padding-right: 5px;
-                color: #43C386;
+                color: $color-green;
             }
         }
     }
@@ -94,7 +94,8 @@ $speed-labels-max-width: 600px;
         }
  
         .speed-icon {
-            background: linear-gradient(to bottom right, #fce4ed, #ffe8cc);
+            background: linear-gradient(to bottom right, $color-light-pink, $color-light-yellow);
+            color: $color-gray;
             padding: 5px 10px;
             border-top-left-radius: 4px;
             border-bottom-left-radius: 4px;
@@ -108,7 +109,7 @@ $speed-labels-max-width: 600px;
 
             @media screen and (max-width: $speed-labels-max-width) {
                 padding: 0;
-                background-color: white;
+                background-color: transparent;
             }        
         }
     }

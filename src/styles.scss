@@ -2,7 +2,19 @@ $color-green: #43C386;
 $color-dark-gray: #2e364f;
 $color-gray: #9CA0AD;
 $color-light-gray: #fafafa;
+$color-light-pink: #fce4ed;
+$color-light-yellow: #ffe8cc;
+$color-pink: #da1b60;
+$color-yellow: #ff8a00;
 
+@mixin flexbox() {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+  
 body {
     margin: 20px;
     font-family: Roboto, sans-serif;
@@ -24,30 +36,21 @@ body {
         transition: all 0.5s;
     }
 
-    .button-green {
-        background: $color-green;
-        color: #ffffff;
-
-        &:hover {
-            background: lighten($color-green, 10%);
-        }
-    }
-
     .button-light {
-        background: linear-gradient(to bottom right, #fce4ed, #ffe8cc);
+        background: linear-gradient(to bottom right, $color-light-pink, $color-light-yellow);
         color: $color-gray;
 
         &:hover {
-            background: linear-gradient(to top left, #fce4ed, #ffe8cc);
+            background: linear-gradient(to top left, $color-light-pink, $color-light-yellow);
         }
     }
 
     .button-bright {
-        background: linear-gradient(to bottom right, #da1b60, #ff8a00);
-        color: #FFFFFF;
+        background: linear-gradient(to bottom right, $color-pink, $color-yellow);
+        color: white;
 
         &:hover {
-            background: linear-gradient(to top left, #da1b60, #ff8a00);
+            background: linear-gradient(to top left, $color-pink, $color-yellow);
         }
     }
 

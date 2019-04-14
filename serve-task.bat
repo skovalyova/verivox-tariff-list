@@ -9,6 +9,8 @@ SET pathToFront="d:\Documents\Andersen\Verivox\Angular\verivox-tariff-list\"
 
 cd /d %pathToFront%
 
+call npm install
+
 call ng serve
 @echo.
 
