@@ -2,9 +2,9 @@
 <div *ngFor="let sortableField of sortableFields">
   <div class="order-button-group">
     <button class="button button-light button-sorting" type="button" 
-          (click)="sortTariffs(sortableField.fieldName, 'ASC')">{{sortableField.displayName}} &uarr;</button>
+          (click)="sortTariffs(sortableField.fieldName, 1)">{{sortableField.displayName}} &uarr;</button>
     <button class="button button-light button-sorting" type="button"
-           (click)="sortTariffs(sortableField.fieldName, 'DESC')">{{sortableField.displayName}} &darr;</button>
+           (click)="sortTariffs(sortableField.fieldName, 2)">{{sortableField.displayName}} &darr;</button>
   </div>
 </div>
 

@@ -3,8 +3,8 @@
         "id": 1,
         "name": "Some tariff name",
         "price": 123.45,
-        "uploadSpeed": 12,
-        "downloadSpeed": 13,
+        "uploadSpeed": 5,
+        "downloadSpeed": 30,
         "benefits": [
             "Benefit 1",
             "Benefit 2",

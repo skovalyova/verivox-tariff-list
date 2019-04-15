@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TariffApiService } from '../../services/tariff-api.service';
-import { TariffModel } from 'src/app/models/tariff.model';
+import { SortDirection } from '../../enums/sort-direction.enum';
+import { IModelField } from '../../interfaces/model-field.interface';
+import { ITariff } from '../../interfaces/tariff.interface';
 
 @Component({
   selector: 'app-tariff-list',
   templateUrl: './tariff-list.component.html',
-  styleUrls: ['./tariff-list.component.scss']
+  styleUrls: ['./tariff-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TariffListComponent implements OnInit {
-  public tariffs$: Observable<Array<TariffModel>>;
-  public sortableFields: Array<any>;
+  public tariffs$: Observable<Array<ITariff>>;
+  public sortableFields: Array<IModelField>;
 
   constructor(private tariffApiService: TariffApiService) { }
 
@@ -30,7 +33,7 @@ export class TariffListComponent implements OnInit {
     }];
   }
 
-  public sortTariffs(fieldName: keyof TariffModel, direction: "ASC" | "DESC"): void {
+  public sortTariffs(fieldName: keyof ITariff, direction: SortDirection): void {
     this.tariffs$ = this.tariffApiService.getAll(fieldName, direction);
   }
 }
