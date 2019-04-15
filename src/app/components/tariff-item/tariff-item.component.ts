@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TariffModel } from '../../models/tariff.model';
 
 @Component({
@@ -6,12 +6,7 @@ import { TariffModel } from '../../models/tariff.model';
   templateUrl: './tariff-item.component.html',
   styleUrls: ['./tariff-item.component.scss']
 })
-export class TariffItemComponent implements OnInit {
+export class TariffItemComponent {
   @Input()
   public tariff: TariffModel;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 }
