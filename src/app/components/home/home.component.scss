@@ -1,0 +1,22 @@
+@import '../../../styles.scss';
+
+a {
+    font-size: 32px;
+    font-weight: 700;
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: $color-dark-gray;
+    background-image: -webkit-linear-gradient(left, $color-pink 0%, $color-yellow 50%, transparent 50%);
+    background-position: 100% 0;
+    background-size: 200% 200%;
+    color: transparent;
+    -webkit-transition: .1s .2s;
+    -webkit-background-clip: text;
+
+    &:hover {
+        background-position: 0 0;
+        color: transparent;
+        transition: .4s 0;
+    }
+}
